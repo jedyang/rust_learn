@@ -1,0 +1,6 @@
+Cargo.lock
+target/
+.vscode/
+*.exe
+*.pdb
+.rustlings-state.txt
