@@ -1,9 +1,8 @@
-// Lifetimes are also needed when structs hold references.
-
-// TODO: Fix the compiler errors about the struct.
-struct Book {
-    author: &str,
-    title: &str,
+// 当结构体持有引用时也需要生命周期参数。
+// 修复结构体的编译器错误：添加生命周期参数 `'a`。
+struct Book<'a> {
+    author: &'a str,
+    title: &'a str,
 }
 
 fn main() {

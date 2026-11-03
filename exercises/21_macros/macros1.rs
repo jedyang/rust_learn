@@ -5,6 +5,6 @@ macro_rules! my_macro {
 }
 
 fn main() {
-    // TODO: Fix the macro call.
-    my_macro();
+    // 修复宏调用语法：需要使用感叹号
+    my_macro!();
 }

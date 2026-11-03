@@ -1,9 +1,9 @@
-// TODO: We sometimes encourage you to keep trying things on a given exercise
-// even after you already figured it out. If you got everything working and feel
-// ready for the next exercise, enter `n` in the terminal.
+// 提示：有时候我们鼓励你在某个练习上继续尝试
+// 即使你已经找到答案了。如果你已经全部搞定并准备好
+// 进入下一个练习，在终端输入 `n`。
 //
-// The exercise file will be reloaded when you change one of the lines below!
-// Try adding a new `println!` and check the updated output in the terminal.
+// 当你修改下面任意一行时，练习文件会被重新加载！
+// 试着添加一个新的 `println!` 并在终端查看更新后的输出。
 
 fn main() {
     println!(r#"       Welcome to...                      "#);

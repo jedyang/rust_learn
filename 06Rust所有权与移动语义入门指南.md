@@ -1,3 +1,9 @@
+---
+theme: default
+themeName: "默认主题"
+title: "06Rust所有权与移动语义入门指南"
+---
+
 # Rust 所有权与移动语义（Move Semantics）入门指南
 
 ---

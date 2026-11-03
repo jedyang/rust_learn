@@ -1,4 +1,4 @@
-// TODO: Fix the function body without changing the signature.
+// 已修复：在函数体中返回 `num * num` 的结果。
 fn square(num: i32) -> i32 {
     num * num
 }

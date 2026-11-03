@@ -1,4 +1,4 @@
-// TODO: Fix the compiler error in the function without adding any new line.
+// 已修复：将参数声明为 `mut`，使向量可变，然后才能调用 `push`。
 fn fill_vec(vec: Vec<i32>) -> Vec<i32> {
     let mut vec = vec;
 
@@ -8,7 +8,7 @@ fn fill_vec(vec: Vec<i32>) -> Vec<i32> {
 }
 
 fn main() {
-    // You can optionally experiment here.
+    // 你可以在这里进行可选的实验。
 }
 
 #[cfg(test)]

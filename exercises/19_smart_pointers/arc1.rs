@@ -22,14 +22,14 @@ use std::{sync::Arc, thread};
 fn main() {
     let numbers: Vec<_> = (0..100u32).collect();
 
-    // TODO: Define `shared_numbers` by using `Arc`.
-    // let shared_numbers = ???;
+    // 使用 Arc 将 numbers 包装为线程安全的共享引用计数指针
+    let shared_numbers = Arc::new(numbers);
 
     let mut join_handles = Vec::new();
 
     for offset in 0..8 {
-        // TODO: Define `child_numbers` using `shared_numbers`.
-        // let child_numbers = ???;
+        // 每个线程克隆一份 Arc 指针（共享同一份数据）
+        let child_numbers = Arc::clone(&shared_numbers);
 
         let handle = thread::spawn(move || {
             let sum: u32 = child_numbers.iter().filter(|&&n| n % 8 == offset).sum();

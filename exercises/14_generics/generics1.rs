@@ -3,10 +3,8 @@
 // But in this exercise, the compiler needs some help through a type annotation.
 
 fn main() {
-    // TODO: Fix the compiler error by annotating the type of the vector
-    // `Vec<T>`. Choose `T` as some integer type that can be created from
-    // `u8` and `i8`.
-    let mut numbers = Vec::new();
+    // 标注向量类型为 `i32`，因为 `u8` 和 `i8` 都可以转换成 `i32`
+    let mut numbers: Vec<i32> = Vec::new();
 
     // Don't change the lines below.
     let n1: u8 = 42;

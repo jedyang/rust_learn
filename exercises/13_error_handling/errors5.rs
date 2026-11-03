@@ -46,9 +46,9 @@ impl PositiveNonzeroInteger {
     }
 }
 
-// TODO: Add the correct return type `Result<(), Box<dyn ???>>`. What can we
-// use to describe both errors? Is there a trait which both errors implement?
-fn main() {
+// 使用 `Box<dyn Error>` 作为返回类型，可以同时描述 `ParseIntError` 和
+// `CreationError` 两种错误，因为它们都实现了 `Error` trait。
+fn main() -> Result<(), Box<dyn Error>> {
     let pretend_user_input = "42";
     let x: i64 = pretend_user_input.parse()?;
     println!("output={:?}", PositiveNonzeroInteger::new(x)?);

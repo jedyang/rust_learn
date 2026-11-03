@@ -23,11 +23,11 @@ fn count_for(map: &HashMap<String, Progress>, value: Progress) -> usize {
     count
 }
 
-// TODO: Implement the functionality of `count_for` but with an iterator instead
-// of a `for` loop.
+// 使用迭代器实现 `count_for` 的功能，替代 `for` 循环。
 fn count_iterator(map: &HashMap<String, Progress>, value: Progress) -> usize {
-    // `map` is a hash map with `String` keys and `Progress` values.
+    // `map` 是一个以 `String` 为键、`Progress` 为值的哈希映射。
     // map = { "variables1": Complete, "from_str": None, … }
+    map.values().filter(|val| **val == value).count()
 }
 
 fn count_collection_for(collection: &[HashMap<String, Progress>], value: Progress) -> usize {
@@ -42,12 +42,16 @@ fn count_collection_for(collection: &[HashMap<String, Progress>], value: Progres
     count
 }
 
-// TODO: Implement the functionality of `count_collection_for` but with an
-// iterator instead of a `for` loop.
+// 使用迭代器实现 `count_collection_for` 的功能，替代 `for` 循环。
 fn count_collection_iterator(collection: &[HashMap<String, Progress>], value: Progress) -> usize {
-    // `collection` is a slice of hash maps.
+    // `collection` 是哈希映射的切片。
     // collection = [{ "variables1": Complete, "from_str": None, … },
     //               { "variables2": Complete, … }, … ]
+    collection
+        .iter()
+        .flat_map(|map| map.values())
+        .filter(|val| **val == value)
+        .count()
 }
 
 fn main() {

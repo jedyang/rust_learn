@@ -1,3 +1,9 @@
+---
+theme: default
+themeName: "默认主题"
+title: "01Rust变量与常量入门指南"
+---
+
 # Rust 变量与常量入门指南
 
 ---

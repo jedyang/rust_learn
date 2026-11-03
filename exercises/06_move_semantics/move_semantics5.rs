@@ -1,14 +1,13 @@
 #![allow(clippy::ptr_arg)]
 
-// TODO: Fix the compiler errors without changing anything except adding or
-// removing references (the character `&`).
+// 已修复：通过添加或移除引用（字符 `&`）来修复编译错误。
 
-// Shouldn't take ownership
+// 不应该获取所有权
 fn get_char(data: &String) -> char {
     data.chars().last().unwrap()
 }
 
-// Should take ownership
+// 应该获取所有权
 fn string_uppercase(mut data: String) {
     data = data.to_uppercase();
 

@@ -20,8 +20,8 @@ fn total_cost(item_quantity: &str) -> Result<i32, ParseIntError> {
     let processing_fee = 1;
     let cost_per_item = 5;
 
-    // TODO: Handle the error case as described above.
-    let qty = item_quantity.parse::<i32>();
+    // 使用 `?` 运算符：解析失败时立即返回错误，不再继续乘加运算
+    let qty = item_quantity.parse::<i32>()?;
 
     Ok(qty * cost_per_item + processing_fee)
 }

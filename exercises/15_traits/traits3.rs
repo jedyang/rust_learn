@@ -1,9 +1,9 @@
 trait Licensed {
-    // TODO: Add a default implementation for `licensing_info` so that
-    // implementors like the two structs below can share that default behavior
-    // without repeating the function.
-    // The default license information should be the string "Default license".
-    fn licensing_info(&self) -> String;
+    // 为 `licensing_info` 添加默认实现，这样实现者可以共享默认行为，
+    // 默认许可证信息为 "Default license"。
+    fn licensing_info(&self) -> String {
+        "Default license".to_string()
+    }
 }
 
 struct SomeSoftware {

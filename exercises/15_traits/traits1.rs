@@ -5,7 +5,10 @@ trait AppendBar {
 }
 
 impl AppendBar for String {
-    // TODO: Implement `AppendBar` for the type `String`.
+    // 在字符串末尾追加 "Bar"
+    fn append_bar(self) -> Self {
+        format!("{self}Bar")
+    }
 }
 
 fn main() {

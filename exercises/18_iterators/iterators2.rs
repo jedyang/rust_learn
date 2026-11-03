@@ -1,28 +1,29 @@
 // In this exercise, you'll learn some of the unique advantages that iterators
 // can offer.
 
-// TODO: Complete the `capitalize_first` function.
+// 完成 `capitalize_first` 函数。
 // "hello" -> "Hello"
 fn capitalize_first(input: &str) -> String {
     let mut chars = input.chars();
     match chars.next() {
         None => String::new(),
-        Some(first) => todo!(),
+        // 将首字母大写，并与剩余字符拼接
+        Some(first) => first.to_uppercase().collect::<String>() + chars.as_str(),
     }
 }
 
-// TODO: Apply the `capitalize_first` function to a slice of string slices.
-// Return a vector of strings.
+// 将 `capitalize_first` 函数应用到字符串切片切片上。
+// 返回一个字符串向量。
 // ["hello", "world"] -> ["Hello", "World"]
 fn capitalize_words_vector(words: &[&str]) -> Vec<String> {
-    // ???
+    words.iter().map(|word| capitalize_first(word)).collect()
 }
 
-// TODO: Apply the `capitalize_first` function again to a slice of string
-// slices. Return a single string.
+// 再次将 `capitalize_first` 函数应用到字符串切片切片上。
+// 返回单个字符串。
 // ["hello", " ", "world"] -> "Hello World"
 fn capitalize_words_string(words: &[&str]) -> String {
-    // ???
+    words.iter().map(|word| capitalize_first(word)).collect()
 }
 
 fn main() {

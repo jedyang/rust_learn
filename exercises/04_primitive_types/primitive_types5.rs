@@ -1,8 +1,7 @@
 fn main() {
     let cat = ("Furry McFurson", 3.5);
 
-    // TODO: Destructure the `cat` tuple in one statement so that the println works.
-    // let /* your pattern here */ = cat;
+    // 已修复：解构元组 `cat`，将两个值绑定到 `name` 和 `age`。
     let (name, age) = cat;
 
     println!("{name} is {age} years old");

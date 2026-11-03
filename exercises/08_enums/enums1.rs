@@ -1,6 +1,6 @@
 #[derive(Debug)]
 enum Message {
-    // TODO: Define a few types of messages as used below.
+    // 已修复：定义下面使用的几种消息类型。
     Resize,
     Move,
     Echo,

@@ -1,3 +1,9 @@
+---
+theme: default
+themeName: "默认主题"
+title: "04Rust基本类型入门指南"
+---
+
 # Rust 基本类型（Primitive Types）入门指南
 
 ---

@@ -1,6 +1,5 @@
 struct ColorRegularStruct {
-    // TODO: Add the fields that the test `regular_structs` expects.
-    // What types should the fields have? What are the minimum and maximum values for RGB colors?
+    // 已修复：添加 RGB 颜色字段，类型为 `u8`（取值范围 0-255）。
     red: u8,
     green: u8,
     blue: u8,
@@ -12,7 +11,7 @@ struct ColorTupleStruct(u8, u8, u8);
 struct UnitStruct;
 
 fn main() {
-    // You can optionally experiment here.
+    // 你可以在这里进行可选的实验。
 }
 
 #[cfg(test)]
@@ -21,7 +20,7 @@ mod tests {
 
     #[test]
     fn regular_structs() {
-        // TODO: Instantiate a regular struct.
+        // 已修复：实例化一个常规结构体。
         let green = ColorRegularStruct {
             red: 0,
             green: 255,
@@ -35,7 +34,7 @@ mod tests {
 
     #[test]
     fn tuple_structs() {
-        // TODO: Instantiate a tuple struct.
+        // 已修复：实例化一个元组结构体。
         let green = ColorTupleStruct(0, 255, 0);
 
         assert_eq!(green.0, 0);
@@ -45,7 +44,7 @@ mod tests {
 
     #[test]
     fn unit_structs() {
-        // TODO: Instantiate a unit struct.
+        // 已修复：实例化一个单元结构体。
         let unit_struct = UnitStruct;
         let message = format!("{unit_struct:?}s are fun!");
 

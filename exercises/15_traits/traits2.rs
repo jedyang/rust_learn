@@ -2,8 +2,14 @@ trait AppendBar {
     fn append_bar(self) -> Self;
 }
 
-// TODO: Implement the trait `AppendBar` for a vector of strings.
-// `append_bar` should push the string "Bar" into the vector.
+// 为字符串向量实现 `AppendBar` trait。
+// `append_bar` 将字符串 "Bar" 推入向量末尾。
+impl AppendBar for Vec<String> {
+    fn append_bar(mut self) -> Self {
+        self.push(String::from("Bar"));
+        self
+    }
+}
 
 fn main() {
     // You can optionally experiment here.

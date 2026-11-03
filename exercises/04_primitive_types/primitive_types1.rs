@@ -1,4 +1,4 @@
-// Booleans (`bool`)
+// 布尔类型（`bool`）
 
 fn main() {
     let is_morning = true;
@@ -6,9 +6,7 @@ fn main() {
         println!("Good morning!");
     }
 
-    // TODO: Define a boolean variable with the name `is_evening` before the `if` statement below.
-    // The value of the variable should be the negation (opposite) of `is_morning`.
-    // let …
+    // 已修复：定义布尔变量 `is_evening`，值为 `is_morning` 的取反。
     let is_evening = !is_morning;
     if is_evening {
         println!("Good evening!");

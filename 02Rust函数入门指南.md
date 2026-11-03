@@ -1,3 +1,9 @@
+---
+theme: default
+themeName: "默认主题"
+title: "02Rust函数入门指南"
+---
+
 # Rust 函数入门指南
 
 ---

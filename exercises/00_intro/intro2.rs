@@ -1,4 +1,4 @@
 fn main() {
-    // TODO: Fix the code to print "Hello world!".
+    // 已修复：使用 `println!` 来打印 "Hello world!"。
     println!("Hello world!");
 }

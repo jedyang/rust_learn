@@ -1,3 +1,9 @@
+---
+theme: default
+themeName: "默认主题"
+title: "07Rust结构体入门指南"
+---
+
 # Rust 结构体（Structs）入门指南
 
 ---
@@ -26,6 +32,8 @@
 
 Rust 的结构体与 C 的 struct 最接近，但 Rust 还能在 `impl` 块中为结构体添加方法（类似 class 的方法），不过 Rust **没有继承**，这是与其他语言 class 的关键区别。
 
+关于`impl` 块中下面会有详细解释，你先不要急。
+
 ---
 
 ## 一、三种结构体——普通结构体、元组结构体、单元结构体
@@ -34,7 +42,7 @@ Rust 的结构体与 C 的 struct 最接近，但 Rust 还能在 `impl` 块中�
 
 ### 1.1 普通结构体（Named-field Struct）
 
-最常见的结构体形式，每个字段都有名称。通过 `结构体名 { 字段名: 值 }` 创建，通过 `实例.字段名` 访问。
+这是最常见的结构体形式，每个字段都有名称。通过 `结构体名 { 字段名: 值 }` 创建，通过 `实例.字段名` 访问。
 
 ```rust
 struct ColorRegularStruct {
@@ -46,7 +54,7 @@ struct ColorRegularStruct {
 
 ### 1.2 元组结构体（Tuple Struct）
 
-字段没有名称，只有类型。看起来像元组但带有结构体名。通过 `结构体名(值1, 值2, ...)` 创建，通过 `实例.0`、`实例.1` 等索引访问。
+这种结构体的字段没有名称，只有类型。看起来像元组但带有结构体名。通过 `结构体名(值1, 值2, ...)` 创建，通过 `实例.0`、`实例.1` 等索引访问。
 
 ```rust
 struct ColorTupleStruct(u8, u8, u8);
@@ -56,13 +64,13 @@ struct ColorTupleStruct(u8, u8, u8);
 
 ### 1.3 单元结构体（Unit Struct）
 
-没有任何字段的结构体。本身不存储数据，通常用于实现某个 trait（特征）或作为标记类型。
+这是没有任何字段的结构体。本身也不存储数据，通常用于实现某个 trait（特征）或作为标记类型。
 
 ```rust
 #[derive(Debug)]
 struct UnitStruct;
 ```
-
+tips:
 > `#[derive(Debug)]` 是派生宏，让结构体自动实现 `Debug` trait，这样可以用 `{:?}` 格式化打印。
 
 ### 完整代码
@@ -214,7 +222,7 @@ test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out
 
 **知识点：结构体可以在 `impl` 块中定义方法，使用 `&self` 访问实例自身的数据**
 
-### 3.1 `impl` 块
+### 3.1 `impl` 块-方法
 
 Rust 使用 `impl`（implementation）块为结构体添加方法。方法与函数类似，但第一个参数总是 `self`（或 `&self`、`&mut self`），代表调用方法的结构体实例本身。
 

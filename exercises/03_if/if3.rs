@@ -1,5 +1,5 @@
 fn animal_habitat(animal: &str) -> &str {
-    // TODO: Fix the compiler error in the statement below.
+    // 已修复：else 分支返回的值不应与 1、2、3 冲突，使用 4 作为未使用标识符。
     let identifier = if animal == "crab" {
         1
     } else if animal == "gopher" {
@@ -26,7 +26,7 @@ fn main() {
     // You can optionally experiment here.
 }
 
-// Don't change the tests!
+// 不要修改测试！
 #[cfg(test)]
 mod tests {
     use super::*;

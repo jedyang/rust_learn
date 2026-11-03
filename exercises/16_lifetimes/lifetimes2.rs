@@ -8,13 +8,13 @@ fn longest<'a>(x: &'a str, y: &'a str) -> &'a str {
 }
 
 fn main() {
-    // TODO: Fix the compiler error by moving one line.
+    // 修复编译器错误：通过移动一行代码。
+    // 将 `println!` 移入内部作用域中，确保 `string2` 在使用 `result` 时仍然存活。
 
     let string1 = String::from("long string is long");
-    let result;
     {
         let string2 = String::from("xyz");
-        result = longest(&string1, &string2);
+        let result = longest(&string1, &string2);
+        println!("The longest string is '{result}'");
     }
-    println!("The longest string is '{result}'");
 }

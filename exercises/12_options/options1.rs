@@ -3,7 +3,14 @@
 // someone eats it all, so no ice cream is left (value 0). Return `None` if
 // `hour_of_day` is higher than 23.
 fn maybe_ice_cream(hour_of_day: u16) -> Option<u16> {
-    // TODO: Complete the function body.
+    // 22:00之前返回5，22:00-23:00返回0，超过23返回None
+    if hour_of_day > 23 {
+        None
+    } else if hour_of_day < 22 {
+        Some(5)
+    } else {
+        Some(0)
+    }
 }
 
 fn main() {
@@ -20,7 +27,7 @@ mod tests {
         // Option?
         let ice_creams = maybe_ice_cream(12);
 
-        assert_eq!(ice_creams, 5); // Don't change this line.
+        assert_eq!(ice_creams, Some(5)); // Don't change this line.
     }
 
     #[test]

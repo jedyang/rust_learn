@@ -1,9 +1,9 @@
 fn bigger(a: i32, b: i32) -> i32 {
-    // TODO: Complete this function to return the bigger number!
-    // If both numbers are equal, any of them can be returned.
-    // Do not use:
-    // - another function call
-    // - additional variables
+    // 已修复：使用 if 表达式返回较大的数字。
+    // 如果两个数字相等，返回任意一个都可以。
+    // 不使用：
+    // - 其他函数调用
+    // - 额外的变量
     if a > b {
         a
     } else {
@@ -17,7 +17,7 @@ fn main() {
     println!("The bigger number is {answer}");
 }
 
-// Don't mind this for now :)
+// 现在不用管这个 :)
 #[cfg(test)]
 mod tests {
     use super::*;

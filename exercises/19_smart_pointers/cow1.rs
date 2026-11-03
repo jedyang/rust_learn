@@ -38,8 +38,8 @@ mod tests {
         let vec = vec![0, 1, 2];
         let mut input = Cow::from(&vec);
         abs_all(&mut input);
-        // TODO: Replace `todo!()` with `Cow::Owned(_)` or `Cow::Borrowed(_)`.
-        assert!(matches!(input, todo!()));
+        // 没有发生修改，仍为借用的数据
+        assert!(matches!(input, Cow::Borrowed(_)));
     }
 
     #[test]
@@ -51,8 +51,8 @@ mod tests {
         let vec = vec![0, 1, 2];
         let mut input = Cow::from(vec);
         abs_all(&mut input);
-        // TODO: Replace `todo!()` with `Cow::Owned(_)` or `Cow::Borrowed(_)`.
-        assert!(matches!(input, todo!()));
+        // 没有发生修改，但数据本身就是拥有的
+        assert!(matches!(input, Cow::Owned(_)));
     }
 
     #[test]
@@ -63,7 +63,7 @@ mod tests {
         let vec = vec![-1, 0, 1];
         let mut input = Cow::from(vec);
         abs_all(&mut input);
-        // TODO: Replace `todo!()` with `Cow::Owned(_)` or `Cow::Borrowed(_)`.
-        assert!(matches!(input, todo!()));
+        // 发生了修改，数据本身是拥有的
+        assert!(matches!(input, Cow::Owned(_)));
     }
 }
